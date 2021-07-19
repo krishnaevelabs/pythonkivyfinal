@@ -1,0 +1,25 @@
+#:import get_color_from_hex kivy.utils.get_color_from_hex
+
+<front_screen>:
+    FloatLayout:
+        canvas:
+            Color:
+                rgba: 1,1,1,0.8
+            Rectangle:
+                pos: self.pos
+                size: self.size
+                source: 'logo_evelabs_3.png'
+
+        BoxLayout:
+            orientation: "vertical"
+
+            ScrollView:
+                Test1:
+                    id: Test
+                    size_hint: 1, None
+                    height: self.minimum_height
+
+            MDToolbar:
+                title: "Device:" +Test.con_stat
+                md_bg_color: get_color_from_hex(Test.con_color)
+                height: "50dp"
